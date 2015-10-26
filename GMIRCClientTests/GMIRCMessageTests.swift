@@ -34,7 +34,7 @@ class GMIRCMessageTests: XCTestCase {
     }
 
     func test_welcomeMessage() {
-        let msg = ":card.freenode.net 001 eugenio_ios :Welcome to the freenode Internet Relay Chat Network eugenio_ios"
+        let msg = ":card.freenode.net 001 GMIRCClient :Welcome to the freenode Internet Relay Chat Network GMIRCClient"
         let ircMessage = GMIRCMessage(message: msg)
         
         XCTAssertNotNil(ircMessage!.prefix)
@@ -42,12 +42,12 @@ class GMIRCMessageTests: XCTestCase {
         XCTAssertEqual(ircMessage!.prefix!.serverName!, "card.freenode.net")
         XCTAssertEqual(ircMessage!.command!, "001")
         
-        XCTAssertEqual(ircMessage!.params!.msgTarget, "eugenio_ios")
-        XCTAssertEqual(ircMessage!.params!.textToBeSent, "Welcome to the freenode Internet Relay Chat Network eugenio_ios")
+        XCTAssertEqual(ircMessage!.params!.msgTarget, "GMIRCClient")
+        XCTAssertEqual(ircMessage!.params!.textToBeSent, "Welcome to the freenode Internet Relay Chat Network GMIRCClient")
     }
     
     func test_privateMessage() {
-        let msg = ":eugenio79!~giuseppem@93-34-6-226.ip47.fastwebnet.it PRIVMSG eugenio_ios :Hi, I am Eugenio too"
+        let msg = ":eugenio79!~giuseppem@93-34-6-226.ip47.fastwebnet.it PRIVMSG GMIRCClient :Hi, I am another client"
         let ircMessage = GMIRCMessage(message: msg)
         
         XCTAssertNotNil(ircMessage!.prefix)
@@ -56,8 +56,8 @@ class GMIRCMessageTests: XCTestCase {
         XCTAssertNotNil(ircMessage!.command!, "PRIVMSG")
         
         XCTAssertNotNil(ircMessage!.params)
-        XCTAssertEqual(ircMessage!.params!.msgTarget, "eugenio_ios")
-        XCTAssertEqual(ircMessage!.params!.textToBeSent, "Hi, I am Eugenio too")
+        XCTAssertEqual(ircMessage!.params!.msgTarget, "GMIRCClient")
+        XCTAssertEqual(ircMessage!.params!.textToBeSent, "Hi, I am another client")
     }
 
 }

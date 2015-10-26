@@ -21,7 +21,6 @@
 import Foundation
 @testable import GMIRCClient
 
-/// TODO: set the expected received message based on the message sent
 class GMSocketStub: NSObject, GMSocketProtocol {
     
     weak var delegate: GMSocketDelegate?

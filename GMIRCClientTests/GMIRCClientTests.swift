@@ -45,9 +45,9 @@ class GMIRCClientTests: XCTestCase, GMIRCClientDelegate {
 
     func test_register_welcome() {
         
-        socket.responseToMessage("USER eugenio 0 * : eugenio", response: ":card.freenode.net 001 eugenio_ios :Welcome to the freenode Internet Relay Chat Network eugenio_ios")
+        socket.responseToMessage("USER eugenio 0 * : eugenio", response: ":card.freenode.net 001 eugenio :Welcome to the freenode Internet Relay Chat Network eugenio")
         
-        socket.responseToMessage("JOIN #test", response: ":eugenio_ios!~eugenio_i@93-34-6-226.ip47.fastwebnet.it JOIN #test")
+        socket.responseToMessage("JOIN #test", response: ":eugenio!~eugenio_i@93-34-6-226.ip47.fastwebnet.it JOIN #test")
         
         expectation = expectationWithDescription("Welcome expectation")
         
@@ -68,11 +68,11 @@ class GMIRCClientTests: XCTestCase, GMIRCClientDelegate {
     
     func test_privateMessage() {
 
-        socket.responseToMessage("PRIVMSG eugenio79 :Hi, I\'m eugenio_ios. Nice to meet you!", response: ":eugenio79!~giuseppem@93-34-6-226.ip47.fastwebnet.it PRIVMSG eugenio_ios :Hi, I am Eugenio too")
+        socket.responseToMessage("PRIVMSG eugenio79 :Hi, I\'m GMIRCClient. Nice to meet you!", response: ":eugenio79!~giuseppem@93-34-6-226.ip47.fastwebnet.it PRIVMSG GMIRCClient :Hi, I am a client too")
         
         expectation = expectationWithDescription("Private message expectation")
         
-        ircClient.sendMessageToNickName("Hi, I'm eugenio_ios. Nice to meet you!", nickName: "eugenio79")
+        ircClient.sendMessageToNickName("Hi, I'm GMIRCClient. Nice to meet you!", nickName: "eugenio79")
         
         waitForExpectationsWithTimeout(0.05) { error in
             XCTAssertNil(error)
@@ -94,7 +94,7 @@ class GMIRCClientTests: XCTestCase, GMIRCClientDelegate {
     func didReceivePrivateMessage(text: String, from: String) {
         print("\(from): \(text)")
         
-        XCTAssertEqual(text, "Hi, I am Eugenio too")
+        XCTAssertEqual(text, "Hi, I am a client too")
         XCTAssertEqual(from, "eugenio79")
         
         expectation.fulfill()
