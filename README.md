@@ -1,6 +1,22 @@
+# GMIRCClient
+
 GMIRCClient is a lightweight iOS IRC client, entirely written in Swift.
 
-Currently the set of features is minimal but my purpose is to extend them soon.
+NOTE: currently the set of features is minimal but I hope to extend them soon.
+
+## Requirements
+
+* iOS 8.0+
+* XCode 7.1+
+
+## Installation
+
+GMIRCClient is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod "GMIRCClient"
+```
 
 ## Usage
 
@@ -31,3 +47,11 @@ func didReceivePrivateMessage(text: String, from: String) {
     print("Received message from \(from): \(text)")
 }
 ```
+
+## Author
+
+Giuseppe Morana aka Eugenio, giuseppe.morana.79@gmail.com
+
+## License
+
+GMIRCClient is available under the MIT license. See the LICENSE file for more info.

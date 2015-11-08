@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'GMIRCClient_Example', :exclusive => true do
+  pod "GMIRCClient", :path => "../"
+end
+
+target 'GMIRCClient_Tests', :exclusive => true do
+  pod "GMIRCClient", :path => "../"
+
+  
+end

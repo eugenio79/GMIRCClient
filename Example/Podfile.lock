@@ -1,0 +1,14 @@
+PODS:
+  - GMIRCClient (0.1.0)
+
+DEPENDENCIES:
+  - GMIRCClient (from `../`)
+
+EXTERNAL SOURCES:
+  GMIRCClient:
+    :path: ../
+
+SPEC CHECKSUMS:
+  GMIRCClient: f046370b74aa2db0d2db24729c56a8d7965eb882
+
+COCOAPODS: 0.39.0

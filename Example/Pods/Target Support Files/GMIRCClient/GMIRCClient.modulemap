@@ -1,0 +1,6 @@
+framework module GMIRCClient {
+  umbrella header "GMIRCClient-umbrella.h"
+
+  export *
+  module * { export * }
+}
