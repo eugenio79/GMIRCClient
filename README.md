@@ -7,7 +7,7 @@ NOTE: currently the set of features is minimal but I hope to extend them soon.
 ## Requirements
 
 * iOS 8.0+
-* XCode 7.1+
+* Xcode 7.1+
 
 ## Installation
 
